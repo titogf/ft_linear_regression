@@ -4,6 +4,9 @@ def obtener_numero():
     while True:
         try:
             mileage = float(input("Introduce car mileage: "))
+            if mileage < 0:
+                print("Error: Mileage cannot be negative.")
+                continue
             return mileage
         except KeyboardInterrupt:
             sys.exit(130)
