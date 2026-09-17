@@ -6,7 +6,7 @@ prices = []
 
 if os.path.exists("data.csv"):
     with open("data.csv", newline="") as csvfile:
-        reader = csv.DictReader(csvfile)  # lee cada fila como un diccionario
+        reader = csv.DictReader(csvfile)
         for row in reader:
             mileages.append(float(row["km"]))
             prices.append(float(row["price"]))
