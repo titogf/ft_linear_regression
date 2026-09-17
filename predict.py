@@ -24,7 +24,7 @@ if os.path.exists("thetas.csv"):
             theta1 = float(row["theta1"])
             break
 else:
-    print("Aviso: no se encontró thetas.csv; usando theta0=0, theta1=0")
+    print("Warning: thetas.csv not found; using theta0=0, theta1=0")
 
 price = theta0 + theta1 * mileage
 if price < 0:

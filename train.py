@@ -1,13 +1,18 @@
 import csv
+import os
 
 mileages = []
 prices = []
 
-with open("data.csv", newline="") as csvfile:
-    reader = csv.DictReader(csvfile)  # lee cada fila como un diccionario
-    for row in reader:
-        mileages.append(float(row["km"]))
-        prices.append(float(row["price"]))
+if os.path.exists("data.csv"):
+    with open("data.csv", newline="") as csvfile:
+        reader = csv.DictReader(csvfile)  # lee cada fila como un diccionario
+        for row in reader:
+            mileages.append(float(row["km"]))
+            prices.append(float(row["price"]))
+else:
+    print("Error: data.csv not found, exiting program")
+    exit (1)
 
 if not mileages:
     raise ValueError("CSV empty.")
